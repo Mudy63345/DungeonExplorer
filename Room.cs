@@ -10,9 +10,9 @@ namespace DungeonExplorer
         // Due to the review, I have added a list of room descriptions and items
         private static List<string> roomDescriptions = new List<string>
         {
-            "You are in a dark cave. There is a torch on the wall.",
-            "You are in a forest. There is a sword on the ground.",
-            "You are in a castle. There is a shield on the table."
+            "You are in a dark cave with a torch on the wall.",
+            "You are in a forest with a sword on the ground.",
+            "You are in a castle with a shield on the table."
         };
 
         private static List<string> roomItems = new List<string>

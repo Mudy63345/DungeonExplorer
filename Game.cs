@@ -36,10 +36,12 @@ namespace DungeonExplorer
                     player.ShowStatus();
 
                     // Asks the player what they want to do
-                    Console.WriteLine("What would you like to do?");
-                    Console.WriteLine("1. Pick up an item");
-                    Console.WriteLine("2. Drop item");
-                    Console.WriteLine("3. Exit");
+                    Console.WriteLine(@"What would you like to do?
+                    1. Pick up item
+                    2. Drop item
+                    3. Quit game
+                    Enter your choice");
+                    
                     string choice = Console.ReadLine();
 
                     // This handles player's input choice

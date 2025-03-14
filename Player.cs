@@ -25,15 +25,9 @@ namespace DungeonExplorer
         // This is a method to pick up items to the inventory
         public void PickUpItem(string item)
         {
-            if (string.IsNullOrEmpty(item)) // Simple error handling
+            if (inventory != null) // This check if the player already has an item
             {
-                Console.WriteLine("Nothing to pick up here.");
-                return;
-            }
-
-            if (inventory != null) // This checks if the player already has an item
-            {
-                Console.WriteLine("You are already holding an item. Drop it first to pick up something else.");
+                Console.WriteLine("You are already carrying an item. Drop it first.");
                 return;
             }
 
@@ -41,18 +35,16 @@ namespace DungeonExplorer
             Console.WriteLine(item + " has been added to your inventory.");
         }
         
-        // This is a method to drop the current item
+        // This is a method to drop the current item // Minor changes to more consistentcy
         public void DropItem()
         {
             if (inventory != null)
             {
-                Console.WriteLine("You dropped the " + inventory + ".");
-                inventory = null; // This removes the item from the inventory
+                Console.WriteLine("You're not carrying an item.");
+                return;
             }
-            else
-            {
-                Console.WriteLine("You are not carrying anything.");
-            }
+            Console.WriteLine("You dropped a " + inventory);
+            inventory = null;
         }
         
         // This displays the player status (name, health and inventory)
