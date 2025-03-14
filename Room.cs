@@ -1,15 +1,33 @@
-﻿namespace DungeonExplorer
+﻿using System;
+
+namespace DungeonExplorer
 {
     public class Room
     {
         private string description;
         private string item;
 
-        // A Constructor to load room attributes
-        public Room(string description, string item = null)
+        // Due to the review, I have added a list of room descriptions and items
+        private static List<string> roomDescriptions = new List<string>
         {
-            this.description = description;
-            this.item = item;
+            "You are in a dark cave. There is a torch on the wall.",
+            "You are in a forest. There is a sword on the ground.",
+            "You are in a castle. There is a shield on the table."
+        };
+
+        private static List<string> roomItems = new List<string>
+        {
+            "torch",
+            "sword",
+            "shield"
+        };
+
+        // A Constructor to load room attributes 
+        public Room() // Due to review, room now loads random descriptions and items
+        {
+            Random random = new Random();
+            this.description = roomDescriptions[random.Next(roomDescriptions.Count)];
+            this.item = roomItems[random.Next(roomItems.Count)];
         }
 
         // A method to get the room's description

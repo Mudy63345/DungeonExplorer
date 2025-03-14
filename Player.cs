@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DungeonExplorer
 {
     public class Player
     {
-        // This is encapsulating the private fields
-        public string name;
-        public int health;
+        // This is encapsulating the private fields // Minor changes due to review from public to private fields
+        private string name;
+        private int health;
         private string inventory; // Basic, one item inventory
 
         // This is the constructor to load player attributes
